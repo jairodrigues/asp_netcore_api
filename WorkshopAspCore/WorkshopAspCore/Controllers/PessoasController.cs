@@ -12,7 +12,7 @@ namespace WorkshopAspCore.Controllers
     public class PessoasController : Controller
     {
         private readonly DataContext _dataContext;
-        
+
         public PessoasController(DataContext dataContext)
         {
             this._dataContext = dataContext;
@@ -22,27 +22,68 @@ namespace WorkshopAspCore.Controllers
         public async Task<IActionResult> GetPessoas()
         {
             var pessoas = await _dataContext.Pessoas.ToListAsync();
-            return Json(pessoas);
+            return Ok(pessoas);
         }
 
         [HttpPost]
         public async Task<IActionResult> PostPessoas([FromBody]Pessoa pessoa)
         {
+            if (pessoa == null)
+            {
+                return BadRequest();
+            }
+
             await _dataContext.Pessoas.AddAsync(pessoa);
             await _dataContext.SaveChangesAsync();
 
-            return Json(pessoa);
+            //return Ok(pessoa);
+            return this.CreatedAtRoute("GetPessoa", new { id = pessoa.Id }, pessoa);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPessoas(int id,[FromBody]Pessoa pessoa)
+        public async Task<IActionResult> PutPessoas(int id, [FromBody] Pessoa pessoa)
         {
 
             var todo = _dataContext.Pessoas.FirstOrDefault(t => t.Id == id);
-            _dataContext.Pessoas.Update(todo);
-            _dataContext.SaveChanges();
 
-            return Json(pessoa);
+            todo.Nome = pessoa.Nome;
+            todo.Twitter = pessoa.Twitter;
+
+            _dataContext.Pessoas.Update(todo);
+            await _dataContext.SaveChangesAsync();
+
+            return new ContentResult();
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePessoas(int id)
+        {
+            var aux = await _dataContext.Pessoas.FirstOrDefaultAsync(t => t.Id == id);
+
+            if (aux == null)
+            {
+                return NotFound();
+            }
+
+            _dataContext.Pessoas.Remove(aux);
+            await _dataContext.SaveChangesAsync();
+
+            return Ok(aux);
+        }
+
+        [HttpGet("{id}", Name = "GetPessoa")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var pessoa = await _dataContext.Pessoas.FirstOrDefaultAsync(t => t.Id == id);
+
+            if (pessoa == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(pessoa);
+
+        }
+
     }
 }
