@@ -1,0 +1,17 @@
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\bin\Debug\netcoreapp2.0\WorkShopTest.deps.json
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\bin\Debug\netcoreapp2.0\WorkShopTest.runtimeconfig.json
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\bin\Debug\netcoreapp2.0\WorkShopTest.runtimeconfig.dev.json
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\bin\Debug\netcoreapp2.0\WorkShopTest.dll
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\obj\Debug\netcoreapp2.0\WorkShopTest.csprojResolveAssemblyReference.cache
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\obj\Debug\netcoreapp2.0\WorkShopTest.csproj.CoreCompileInputs.cache
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\obj\Debug\netcoreapp2.0\WorkShopTest.AssemblyInfoInputs.cache
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\obj\Debug\netcoreapp2.0\WorkShopTest.AssemblyInfo.cs
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\bin\Debug\netcoreapp2.0\WorkShopTest.pdb
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\bin\Debug\netcoreapp2.0\WorkshopAspCore.dll
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\bin\Debug\netcoreapp2.0\WorkshopAspCore.pdb
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\obj\Debug\netcoreapp2.0\WorkShopTest.dll
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\obj\Debug\netcoreapp2.0\WorkShopTest.pdb
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\ASP\API\asp_netcore_api\WorkshopAspCore\WorkShopTest\bin\Debug\netcoreapp2.0\appsettings.json
