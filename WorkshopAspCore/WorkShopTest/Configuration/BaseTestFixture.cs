@@ -45,10 +45,8 @@ namespace WorkshopAspCore.TestUnit.TestUnit.Configuration
             if (TesteDataContext.Database.EnsureCreated())
             {
                 TesteDataContext.Database.Migrate();
-            }           
-          
-
-        } 
+            }
+        }
 
         public void Dispose()
         {

@@ -34,7 +34,7 @@ namespace WorkshopAspCore.TestUnit.TestUnit.Controllers
             var pessoa = new Pessoa
             {
                 Nome = "Jairo",
-                Twitter = "jairodrigues"
+                Twitter = "@jairodrigues"
             };
 
             await TesteDataContext.AddAsync(pessoa);

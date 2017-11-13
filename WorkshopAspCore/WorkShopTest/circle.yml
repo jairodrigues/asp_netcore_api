@@ -1,0 +1,27 @@
+﻿machine
+    serveices:
+        - docker
+    post:
+        - curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+        - sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+        - sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
+        - sudo apt-get update
+        - sudo apt-get install dotnet-sdk-2.0.2
+
+dependences:
+    override:
+        -dotnet restore
+
+database:
+    override:
+        -docker run -d -p 1433:1433 -e SA_PASSWORD=Workshop@123 -e ACCEPT_EULA=Y --name mssql microsoft/mssql-server-linux
+        -docker inspect mssql
+
+test:
+    pre:
+        - dotnet build WorkshopTest/obj/project.assets.json
+    override:
+        -dotner test WorkshopTest/obj/project.assets.json
+    post:
+        -donet publish --configuration Release src/WorkshopAspCore/obj/project.assets.json
+        - cp -R src/WorkshopAspCore/WorkshopAspCore/bin/Release/netcoreapp2.0/ $CIRCLE_ARTIFACTS/
